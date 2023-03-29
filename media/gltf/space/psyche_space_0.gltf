@@ -1,0 +1,16 @@
+{
+    "asset":{"generator":"glTF-Transform v3.0.4", "version":"2.0"},
+    "accessors":[
+        {"type":"SCALAR","componentType":5125,"count":1015734},{"name":"POSITION","type":"VEC3","componentType":5126,"count":169291,"max":[2.999985933303833,2.576751947402954,2.122178077697754],"min":[0,0,0]}
+    ],
+    "bufferViews":[{"buffer":0,"byteOffset":0,"byteLength":535110}],
+    "buffers":[{"uri":"psyche_space_0.bin","byteLength":535110}],
+    "meshes":[
+        {"primitives":[{"attributes":{"POSITION":1},"mode":4,"indices":0,"extensions":{"KHR_draco_mesh_compression":{"bufferView":0,"attributes":{"POSITION":0}}}}]}
+    ],
+    "nodes":[{"name":"obj0","mesh":0}],
+    "scenes":[{"nodes":[0]}],
+    "scene":0,
+    "extensionsUsed":["KHR_draco_mesh_compression"],
+    "extensionsRequired":["KHR_draco_mesh_compression"]
+}

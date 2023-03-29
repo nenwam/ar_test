@@ -86,7 +86,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         document.querySelector('header').appendChild(xrButton.domElement);
 
         if (navigator.xr) {
-          navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+          navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
             xrButton.enabled = supported;
           });
 
@@ -95,7 +95,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       function onRequestSession() {
-        return navigator.xr.requestSession('immersive-vr', {
+        return navigator.xr.requestSession('immersive-ar', {
             // Our standing experience will require at least a local-floor
             // reference space (which will be available even on 3DoF device)
             // but can optionally make use of bounded-floor reference spaces

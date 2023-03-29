@@ -1,0 +1,162 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5123,
+      "count": 150000,
+      "max": [
+        34296
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 34297,
+      "max": [
+        2.9981396198272705,
+        2.5755071640014648,
+        2.1243560314178467
+      ],
+      "min": [
+        0.00042492177453823388,
+        -0.0013507792027667165,
+        -0.00023754188441671431
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 34297,
+      "max": [
+        0.99898576736450195,
+        0.99907904863357544
+      ],
+      "min": [
+        0.0010142175015062094,
+        0.00092095846775919199
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 34297,
+      "max": [
+        0.99988871812820435,
+        0.99997323751449585,
+        0.99993610382080078
+      ],
+      "min": [
+        -0.999847412109375,
+        -0.99995660781860352,
+        -0.99993693828582764
+      ],
+      "type": "VEC3"
+    }
+  ],
+  "asset": {
+    "generator": "Created by RapidCompact v6.2.1 | www.rapidcompact.com",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 300000,
+      "byteOffset": 0,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 411564,
+      "byteOffset": 300000,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 274376,
+      "byteOffset": 711564,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 411564,
+      "byteOffset": 985940,
+      "byteStride": 12,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1397504,
+      "uri": "rapid.data.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "material0_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 3,
+            "POSITION": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0
+    }
+  ],
+  "samplers": [
+    {
+      "wrapS": 33071,
+      "wrapT": 33071
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}

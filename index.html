@@ -131,58 +131,25 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSessionStarted(session) {
         session.addEventListener('end', onSessionEnded);
 
+        if (session.isImmersive) {
+          // When in 'immersive-ar' mode don't draw an opaque background because
+          // we want the real world to show through.
+          skybox.visible = false;
+        }
+
         initGL();
 
-        let glLayer = new XRWebGLLayer(session, gl);
-        session.updateRenderState({ baseLayer: glLayer });
+        session.updateRenderState({ baseLayer: new XRWebGLLayer(session, gl) });
 
-        function onRefSpaceCreated(refSpace) {
+        let refSpaceType = session.isImmersive ? 'local' : 'viewer';
+        session.requestReferenceSpace(refSpaceType).then((refSpace) => {
           if (session.isImmersive) {
             xrImmersiveRefSpace = refSpace;
           } else {
-            // If we're using a viewer reference space we need to scoot the
-            // origin down a bit to put the camera at approximately the right
-            // level. (Here we're moving it 1.6 meters, which is *very* roughly
-            // the eye height of an "average" adult human.)
             inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
-            inlineViewerHelper.setHeight(1.6);
-
-            // You can accomplish the same thing without the helper class by
-            // simply offseting the reference space with a negative y value:
-            // refSpace = refSpace.getOffsetReferenceSpace(new XRRigidTransform({y: -1.6}));
           }
           session.requestAnimationFrame(onXRFrame);
-        }
-
-        if (session.isImmersive) {
-          // Attempt to get a 'bounded-floor' reference space, which will align
-          // the user's physical floor with Y=0 and provide boundaries that
-          // indicate where the user can safely walk.
-          session.requestReferenceSpace('bounded-floor').then((refSpace) => {
-            onRefSpaceCreated(refSpace);
-
-            if (!boundsRenderer) {
-              boundsRenderer = new BoundsRenderer(refSpace);
-              scene.addNode(boundsRenderer);
-            } else {
-              boundsRenderer.boundedRefSpace = refSpace;
-            }
-          }).catch(() => {
-            // If a bounded reference space isn't supported, fall back to a
-            // local-floor reference space. This still provides a floor-relative
-            // space and will always be supported for immersive sessions. It
-            // will not, however, provide boundaries and generally expects the
-            // user to stand in one place. If the device doesn't have a way of
-            // determining the floor level (for example, with a 3DoF device)
-            // then it will return an emulated local-floor space, where the view
-            // is translated up by a static height so that the scene still
-            // renders in approximately the right place.
-            console.log('Falling back to local-floor reference space');
-            session.requestReferenceSpace('local-floor').then(onRefSpaceCreated);
-          });
-        } else {
-          session.requestReferenceSpace('viewer').then(onRefSpaceCreated);
-        }
+        });
       }
 
       function onEndSession(session) {
@@ -192,9 +159,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
           xrButton.setSession(null);
+          // Turn the background back on when we go back to the inlive view.
+          skybox.visible = true;
         }
       }
 
+      // Called every time a XRSession requests that a new frame be drawn.
       function onXRFrame(t, frame) {
         let session = frame.session;
         let refSpace = session.isImmersive ?
@@ -206,10 +176,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
         session.requestAnimationFrame(onXRFrame);
 
-        // Every XR frame uses basically the same render loop, so for the sake
-        // of keeping the sample code focused on the interesting bits most
-        // samples after this one will start using this helper function to hide
-        // away the majority of the rendering logic.
         scene.drawXRFrame(frame, pose);
 
         scene.endFrame();

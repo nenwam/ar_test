@@ -94,11 +94,15 @@ body {
 
     <!-- Top Navigation Menu -->
     <div class="topnav">
-      <a id="curPage" href="#home" class="active">Current Model<script>document.getElementById('curPage').innerHTML = document.title</script></a>
+      <a id="curPage" class="active">Current Model<script>document.getElementById('curPage').innerHTML = document.title</script></a>
       <!-- Navigation links (hidden by default) -->
       <div id="myLinks">
-        <a href="/ar_test/index.html">The Asteroid</a>
-        <a href="/ar_test/spacecraft.html">The Spacecraft</a>
+        <a href="/index.html">The Asteroid</a>
+        <a href="/spacecraft.html">The Spacecraft</a>
+        <a href="/credit.html">Credits + Disclaimer</a>
+        <!-- <a href="/ar_test/">The Asteroid</a>
+        <a href="/ar_test/spacecraft.html">The Spacecraft</a> 
+        <a href="/ar_test/credit.html">Credit</a>-->
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -120,16 +124,21 @@ body {
       </script>
 
 <!-- END OF TEST -->
-        <summary>Psyche Asteroid</summary>
+        <summary>Psyche Spacecraft</summary>
         <p>
-          The NASA Psyche mission is a journey to 16 Psyche, a very special asteroid.
-          It was discovered in 1852 by Italian astronomer Annibale de Gasparis.
-          It’s the largest known M-type asteroid, which means it’s composed of high concentrations of metal!
+          The Psyche spacecraft is 81 feet long by 24 feet wide. That’s about the size of a tennis court.
         </p>
         <p>
-          It has a diameter of 140 miles. That’s longer than the distance from Phoenix to Tucson.
-          It has a mass of 2.3 x 10^19, which is about 3,000 times less than the moon.
-          The asteroid’s orbit is circular, and it resides in between Mars’ and Jupiter’s orbit
+          The body of the spacecraft that contains all the critical components is 10 feet long by 8 feet wide. That’s about the size of a smart car.
+        </p>
+        <p>
+          The propulsion that the craft will use is solar electric.
+        </p>
+        <p>
+          Some of the equipment it will have are a gamma ray and neutron spectrometer, a multispectral imager, a magnetometer, and an x-band radio telecommunications system.
+        </p>
+        <p>
+          It also will use a state-of-the-art communication technology named Deep Space Optical Communicaiton, or DSOC, that encodes the data in photons for communication between the craft and mission control.
         </p>
       </details>
     </header>
@@ -161,10 +170,10 @@ body {
       let gl = null;
       let renderer = null;
       let scene = new Scene();
-      let solarSystem = new Gltf2Node({url: 'media/gltf/space/space.gltf'});
+      let solarSystem = new Gltf2Node({url: 'media/gltf/space/spacecraft2.gltf'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      solarSystem.scale = [0.3, 0.3, 0.3];
+      solarSystem.scale = [0.1, 0.1, 0.1];
       solarSystem.translation = [-1, 0, -2];
       scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.

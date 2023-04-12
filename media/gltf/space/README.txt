@@ -1,0 +1,1 @@
+Psyche Mission Spacecraft model by PsycheMission on Thingiverse: https://www.thingiverse.com/thing:2692858

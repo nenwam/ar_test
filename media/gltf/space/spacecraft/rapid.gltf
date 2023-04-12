@@ -1,0 +1,175 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 149997,
+      "max": [
+        74308
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 74309,
+      "max": [
+        39.875068664550781,
+        250.367431640625,
+        25.775146484375
+      ],
+      "min": [
+        -14.554200172424316,
+        -212.6204833984375,
+        -84.609443664550781
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 74309,
+      "max": [
+        0.99930202960968018,
+        1
+      ],
+      "min": [
+        0,
+        0.00094215973513200879
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 74309,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    }
+  ],
+  "asset": {
+    "generator": "Created by RapidCompact v6.2.1 | www.rapidcompact.com",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 599988,
+      "byteOffset": 0,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 891708,
+      "byteOffset": 599988,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 594472,
+      "byteOffset": 1491696,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 891708,
+      "byteOffset": 2086168,
+      "byteStride": 12,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2977876,
+      "uri": "rapid.data.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "material0_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Psyche.001",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 3,
+            "POSITION": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "Psyche",
+      "rotation": [
+        0.51262044906616211,
+        -0.48712760210037231,
+        0.48861181735992432,
+        0.51106327772140503
+      ],
+      "scale": [
+        0.040000006556510925,
+        0.040000006556510925,
+        0.040000006556510925
+      ]
+    }
+  ],
+  "samplers": [
+    {
+      "wrapS": 33071,
+      "wrapT": 33071
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}

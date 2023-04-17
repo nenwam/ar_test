@@ -87,10 +87,7 @@ body {
   <body>
     <header>
       
-      <details open>
-        <!-- BEGGINNING OF TEST -->
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    
+      <details open>   
 
     <!-- Top Navigation Menu -->
     <div class="topnav">
@@ -119,8 +116,6 @@ body {
 
       
       </script>
-
-<!-- END OF TEST -->
         <summary>Psyche Asteroid</summary>
         <p>
           The NASA Psyche mission is a journey to 16 Psyche, a very special asteroid.
@@ -171,6 +166,8 @@ body {
       // Still adding a skybox, but only for the benefit of the inline view.
       let skybox = new SkyboxNode({url: 'media/textures/milky-way-4k.png'});
       scene.addNode(skybox);
+      // Turn off fps counter
+      scene.enableStats(false)
 
 
       function initXR() {

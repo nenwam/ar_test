@@ -88,10 +88,6 @@ body {
     <header>
       
       <details open>
-        <!-- BEGGINNING OF TEST -->
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    
-
     <!-- Top Navigation Menu -->
     <div class="topnav">
       <a id="curPage" class="active">Current Model<script>document.getElementById('curPage').innerHTML = document.title</script></a>
@@ -120,7 +116,6 @@ body {
       
       </script>
 
-<!-- END OF TEST -->
         <summary>Psyche Spacecraft</summary>
         <p>
           The Psyche spacecraft is 81 feet long by 24 feet wide. That’s about the size of a tennis court.
@@ -176,6 +171,8 @@ body {
       // Still adding a skybox, but only for the benefit of the inline view.
       let skybox = new SkyboxNode({url: 'media/textures/milky-way-4k.png'});
       scene.addNode(skybox);
+      // Turn off fps counter
+      scene.enableStats(false)
 
 
       function initXR() {
